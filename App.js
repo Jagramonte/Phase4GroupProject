@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Import the styles
+import MyFavsTab from './MyFavsTab';
+import HorrorTab from './HorrorTab';
+import ActionTab from './ActionTab';
+import RomanceTab from './RomanceTab';
+import SciFiTab from './SciFiTab';
+import ComedyTab from './ComedyTab';
 import './App.css'; // Create this file for your own styles
 
 const App = () => {
@@ -24,27 +30,27 @@ const App = () => {
 
         <TabPanel>
           {/* Content for Tab 1 */}
-          <p>Content for Tab 1</p>
+          <MyFavsTab />
         </TabPanel>
         <TabPanel>
           {/* Content for Tab 2 */}
-          <p>Content for Tab 2</p>
+          <HorrorTab />
         </TabPanel>
         <TabPanel>
           {/* Content for Tab 3 */}
-          <p>Content for Tab 3</p>
+          <ActionTab />
         </TabPanel>
         <TabPanel>
           {/* Content for Tab 4 */}
-          <p>Content for Tab 4</p>
+          <RomanceTab />
         </TabPanel>
         <TabPanel>
           {/* Content for Tab 5 */}
-          <p>Content for Tab 5</p>
+          <SciFiTab />
         </TabPanel>
         <TabPanel>
           {/* Content for Tab 6 */}
-          <p>Content for Tab 6</p>
+          <ComedyTab />
         </TabPanel>
       </Tabs>
     </div>
