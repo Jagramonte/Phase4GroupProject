@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Import the styles
-import MyFavsTab from './MyFavsTab';
-import HorrorTab from './HorrorTab';
+import MyFavsTab from '../MyFavsTab';
+import HorrorTab from '../HorrorTab';
 import ActionTab from './ActionTab';
-import RomanceTab from './RomanceTab';
-import SciFiTab from './SciFiTab';
-import ComedyTab from './ComedyTab';
+import RomanceTab from '../RomanceTab';
+import SciFiTab from '../SciFiTab';
+import ComedyTab from '../ComedyTab';
 import './App.css'; // Create this file for your own styles
 
 const App = () => {
