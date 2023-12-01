@@ -32,11 +32,12 @@ class Movie(db.Model, SerializerMixin):
     movie_details = db.Column(db.String)
     img = db.Column(db.String)
 
-    def __init__(self,genre_id, movie_name,movie_details,user_id):
+    def __init__(self,genre_id, movie_name,movie_details,user_id,img):
         self.genre_id = genre_id
         self.movie_name = movie_name
         self.movie_details = movie_details
         self.user_id = user_id
+        self.img = img
 
 
     #relationships 
