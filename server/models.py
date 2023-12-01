@@ -18,15 +18,16 @@ class User(db.Model,SerializerMixin):
 
 
     #serialization rules
+    serialization_rules = ('-movies')
 
 class Movie(db.Model, SerializerMixin):
     __tablename__ = 'movies'
 
     movie_id = db.Column(db.Integer, primary_key = True)
-    genre_id = db.Column(db.Integer, db.ForeignKey('genre_id'))
+    genre_id = db.Column(db.Integer, db.ForeignKey('genres.id'))
     movie_name = db.Column(db.String)
     movie_details = db.Column(db.String)
-    user_id = db.Column(db.Integer, db.ForeignKey('user_id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
 
     #relationships 
@@ -36,6 +37,7 @@ class Movie(db.Model, SerializerMixin):
 
 
     #serialization rules
+    serialization_rules = ('-user', 'genre')
 
 class Genre(db.Model, SerializerMixin):
     __tablename__ = 'genres'
@@ -48,3 +50,4 @@ class Genre(db.Model, SerializerMixin):
 
 
     #serlialization rules
+    serialization_rules = ('-movies')
