@@ -100,3 +100,11 @@ if __name__ == '__main__':
         m73 = Movie(1,1, 'Scream', 'A self-aware slasher film that satirizes horror tropes while delivering suspense and thrills as a masked killer targets a group of high school students.')
         m74 = Movie(1,1, 'Get Out', 'A social thriller that explores racial tension and horror when a young African American man visits his white girlfriend\'s family estate.')
         m75 = Movie(1,1, 'Hereditary', 'A chilling and atmospheric horror film that explores a family\'s dark and supernatural history, unraveling terrifying secrets after the death of their secretive grandmother.')
+
+        db.session.add(u1)
+
+        db.session.add_all([g1, g2, g3, g4, g5])
+
+        db.session.add_all([m1, m2, m3, m4, m5, m6, m7, m8, m9, m10,m11, m12, m13, m14, m15, m16, m17, m18, m19, m20, m21, m22, m23, m24, m25, m26, m27, m28, m29, m30,m31, m32, m33, m34, m35, m36, m37, m38, m39, m40, m41, m42, m43, m44, m45, m46, m47, m48, m49, m50, m51, m52, m53, m54, m55, m56, m57, m58, m59, m60, m61, m62, m63, m64, m65, m66, m67, m68, m69, m70,m71, m72, m73, m74, m75])
+        db.session.commit()
+        print("Seed completed.")
