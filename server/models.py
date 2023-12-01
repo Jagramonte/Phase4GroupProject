@@ -12,7 +12,9 @@ class User(db.Model,SerializerMixin):
 
     user_id = db.Column(db.Integer, primary_key = True)
     username = db.Column(db.String)
-
+    
+    def __init__(self, username):
+        self.username = username
     #relationships 
     movies = db.relationship('Movie', back_populates = 'user')
 
@@ -24,10 +26,16 @@ class Movie(db.Model, SerializerMixin):
     __tablename__ = 'movies'
 
     movie_id = db.Column(db.Integer, primary_key = True)
-    genre_id = db.Column(db.Integer, db.ForeignKey('genres.id'))
+    genre_id = db.Column(db.Integer, db.ForeignKey('genres.genre_id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
     movie_name = db.Column(db.String)
     movie_details = db.Column(db.String)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+    def __init__(self,genre_id, movie_name,movie_details,user_id):
+        self.genre_id = genre_id
+        self.movie_name = movie_name
+        self.movie_details = movie_details
+        self.user_id = user_id
 
 
     #relationships 
@@ -44,6 +52,9 @@ class Genre(db.Model, SerializerMixin):
 
     genre_id = db.Column(db.Integer, primary_key = True)
     genre_name = db.Column(db.String)
+
+    def __init__(self, genre_name):
+        self.genre_name = genre_name
 
     #relationships
     movies = db.relationship('Movie', back_populates = 'genre')
